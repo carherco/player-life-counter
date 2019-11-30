@@ -1,0 +1,10 @@
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="..." alt="Player avatar">
+  <div class="card-body">
+    <h5 class="card-title">{{ player.name }} - Nivel: {{ player.level }}</h5>
+    <p class="card-text">Vida: {{ player.life }}</p>
+    <p class="card-text">Fuerza: {{ player.strength }}</p>
+
+    <button (click)="modify()" class="btn btn-primary">Modificar</button>
+  </div>
+</div>

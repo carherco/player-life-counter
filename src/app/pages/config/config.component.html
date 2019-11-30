@@ -1,0 +1,25 @@
+<img src="assets/images/logo.png" class="img-fluid" alt="Responsive image">
+
+<div class="alert alert-warning" role="alert">
+  Añade entre 3 y 5 jugadores/as.
+</div>
+
+<div>
+  <ul class="list-group">
+    <li *ngFor="let p of players; let pos=index;" class="list-group-item list-group-item-warning d-flex justify-content-between">
+      {{ p.name }}
+      <button (click)="deletePlayer(pos)" class="btn btn-danger" type="button">-</button>
+    </li>
+  </ul>
+</div>
+
+<div class="input-group">
+  <input [(ngModel)]="newPlayer.name" type="text" class="form-control">
+  <div class="input-group-append">
+    <button *ngIf="players.length < 6" (click)="addPlayer()" class="btn btn-primary" type="button">+</button>
+  </div>
+</div>
+
+<div class="input-group">
+  <button *ngIf="players.length >= 3" (click)="startGame()" type="button" class="btn btn-success btn-lg btn-block">Empezar partida</button>
+</div>
